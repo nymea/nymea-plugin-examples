@@ -1,0 +1,29 @@
+Source: nymea-plugin-examples
+Section: utils
+Priority: options
+Maintainer: Bernhard Trinnes <bernhard.trinnes@nymea.io>
+Build-depends: debhelper (>= 0.0.0),
+               libnymea1-dev,
+               pkg-config,
+               python:any,
+               qtbase5-dev,
+               nymea-dev-tools:native,
+Standards-Version: 3.9.3
+
+
+Package: nymea-plugin-template
+Architecture: any
+Section: libs
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         nymea-plugins-translations,
+Description: nymea.io plug-in template
+
+
+Package: nymea-plugin-simplebutton
+Architecture: any
+Section: libs
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         nymea-plugins-translations,
+Description: nymea.io plug-in simple button
