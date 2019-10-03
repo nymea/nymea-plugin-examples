@@ -54,7 +54,7 @@ void DevicePluginSimpleButton::deviceRemoved(Device *device)
 
 void DevicePluginSimpleButton::setupDevice(DeviceSetupInfo *info)
 {
-    qCDebug(dcSimpleButton()) << "Setup device" << info.device << info.device->params();
+    qCDebug(dcSimpleButton()) << "Setup device" << info->device() << info.device()->params();
 
     return;
 }

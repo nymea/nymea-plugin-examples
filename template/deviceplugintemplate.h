@@ -23,7 +23,7 @@
 #ifndef DEVICEPLUGINEXAMPLE_H
 #define DEVICEPLUGINEXAMPLE_H
 
-#include "/devices/deviceplugin.h"
+#include "devices/deviceplugin.h"
 
 class DevicePluginExample: public DevicePlugin
 {

@@ -23,7 +23,7 @@
 #ifndef DEVICEPLUGINSIMPLEBUTTON_H
 #define DEVICEPLUGINSIMPLEBUTTON_H
 
-#include "/devices/deviceplugin.h"
+#include "devices/deviceplugin.h"
 
 class DevicePluginSimpleButton: public DevicePlugin
 {
