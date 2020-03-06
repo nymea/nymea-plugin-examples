@@ -2,16 +2,17 @@
     "name": "Template",
     "displayName": "Template",
     "id": "edda18e4-fdbd-474f-95ad-e65abcdb616d",
+    "id": "00000000-0000-0000-0000-000000000000",
     "vendors": [
         {
-            "name": "guh",
-            "displayName": "nymea",
-            "id": "2062d64d-3232-433c-88bc-0d33c0ba2ba6",
-            "deviceClasses": [
+            "name": "vendorName",
+            "displayName": "Vendor Name",
+            "id": "00000000-0000-0000-0000-000000000000",
+            "thingClasses": [
                 {
                     "name": "template",
                     "displayName": "Template",
-                    "id": "aff800d8-2a08-49b6-8a43-c6b5bc92a292",
+                    "id": "00000000-0000-0000-0000-000000000000",
                     "setupMethod": "JustAdd",
                     "createMethods": ["User"],
                     "interfaces": [ ],

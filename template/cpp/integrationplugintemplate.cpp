@@ -33,7 +33,7 @@ void IntegrationPluginExample::init()
     // Initialize/create objects
 }
 
-void  IntegrationPluginExample::setupThing(ThingSetupInfi *info)
+void  IntegrationPluginExample::setupThing(ThingSetupInfo *info)
 {
     qCDebug(dcTemplate()) << "Setup thing" << info->thing()->name() << info->thing()->params();
 
