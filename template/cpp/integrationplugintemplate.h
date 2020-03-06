@@ -20,48 +20,30 @@
  *                                                                         *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-#include "plugininfo.h"
-#include "deviceplugintemplate.h"
+#ifndef INTEGRATIONPLUGINEXAMPLE_H
+#define INTEGRATIONPLUGINEXAMPLE_H
 
-DevicePluginExample::DevicePluginExample()
+#include "integrations/integrationplugin.h"
+
+class IntegrationPluginExample: public IntegrationPlugin
 {
+    Q_OBJECT
 
-}
+    Q_PLUGIN_METADATA(IID "io.nymea.IntegrationPlugin" FILE "integrationplugintemplate.json")
+    Q_INTERFACES(IntegrationPlugin)
 
-void DevicePluginExample::init()
-{
-    // Initialize/create objects
-}
 
-void DevicePluginExample::startMonitoringAutoDevices()
-{
-    // Start seaching for devices which can be discovered and added automatically
-}
+public:
+    explicit DevicePluginExample();
 
-void DevicePluginExample::postSetupDevice(Device *device)
-{
-    qCDebug(dcTemplate()) << "Post setup device" << device->name() << device->params();
+    void init() override;
 
-    // This method will be called once the setup for device is finished
-}
+    void setupThing(ThingSetupInfo *info) override;
 
-void DevicePluginExample::deviceRemoved(Device *device)
-{
-    qCDebug(dcTemplate()) << "Remove device" << device->name() << device->params();
+    void executeAction(ThingActionInfo *info) override;
 
-    // Clean up all data related to this device
-}
+    void thingRemoved(Thing *thing) override;
 
-void  DevicePluginExample::setupDevice(Device *device)
-{
-    qCDebug(dcTemplate()) << "Setup device" << device->name() << device->params();
+};
 
-    return DeviceManager::DeviceSetupStatusSuccess;
-}
-
-void DevicePluginExample::executeAction(Device *device, const Action &action)
-{
-    qCDebug(dcTemplate()) << "Executing action for device" << device->name() << action.actionTypeId().toString() << action.params();
-
-    return DeviceManager::DeviceErrorNoError;
-}
+#endif // INTEGRAtiONPLUGINEXAMPLE_H

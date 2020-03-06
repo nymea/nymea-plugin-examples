@@ -20,34 +20,36 @@
  *                                                                         *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-#ifndef DEVICEPLUGINEXAMPLE_H
-#define DEVICEPLUGINEXAMPLE_H
+#include "plugininfo.h"
+#include "integrationplugintemplate.h"
 
-#include "devices/deviceplugin.h"
-
-class DevicePluginExample: public DevicePlugin
+IntegrationPluginExample::IntegrationPluginExample()
 {
-    Q_OBJECT
 
-    Q_PLUGIN_METADATA(IID "io.nymea.DevicePlugin" FILE "deviceplugintemplate.json")
-    Q_INTERFACES(DevicePlugin)
+}
 
+void IntegrationPluginExample::init()
+{
+    // Initialize/create objects
+}
 
-public:
-    explicit DevicePluginExample();
+void  IntegrationPluginExample::setupThing(ThingSetupInfi *info)
+{
+    qCDebug(dcTemplate()) << "Setup thing" << info->thing()->name() << info->thing()->params();
 
-    void init() override;
-    void startMonitoringAutoDevices() override;
-    void postSetupDevice(Device *device) override;
-    void deviceRemoved(Device *device) override;
+    info->finish(Thing::ThingErrorNoError);
+}
 
-    void setupDevice(DeviceSetupInfo *info) override;
-    void executeAction(DeviceActionInfo *info) override;
+void IntegrationPluginExample::executeAction(ThingActionInfo *info)
+{
+    qCDebug(dcTemplate()) << "Executing action for thing" << info->thing()->name() << action.actionTypeId().toString() << action.params();
 
-private:
+    info->finish(Thing::ThingErrorNoError);
+}
 
-private slots:
+void IntegrationPluginExample::thingRemoved(Thing *thing)
+{
+    qCDebug(dcTemplate()) << "Remove thing" << thing->name() << thing->params();
 
-};
-
-#endif // DEVICEPLUGINEXAMPLE_H
+    // Clean up all data related to this thing
+}

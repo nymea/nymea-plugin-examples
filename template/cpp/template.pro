@@ -1,6 +1,6 @@
 include($$[QT_INSTALL_PREFIX]/include/nymea/plugin.pri)
 
-SOURCES += deviceplugintemplate.cpp
+SOURCES += integrationplugintemplate.cpp
 
-HEADERS += deviceplugintemplate.h
+HEADERS += integrationplugintemplate.h
 

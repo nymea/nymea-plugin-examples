@@ -10,7 +10,7 @@
             "deviceClasses": [
                 {
                     "name": "template",
-                    "displayName": "Example",
+                    "displayName": "Template",
                     "id": "aff800d8-2a08-49b6-8a43-c6b5bc92a292",
                     "setupMethod": "JustAdd",
                     "createMethods": ["User"],
