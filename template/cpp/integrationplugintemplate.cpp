@@ -42,7 +42,7 @@ void  IntegrationPluginExample::setupThing(ThingSetupInfo *info)
 
 void IntegrationPluginExample::executeAction(ThingActionInfo *info)
 {
-    qCDebug(dcTemplate()) << "Executing action for thing" << info->thing()->name() << action.actionTypeId().toString() << action.params();
+    qCDebug(dcTemplate()) << "Executing action for thing" << info->thing()->name() << info->action().actionTypeId().toString() << info->action().params();
 
     info->finish(Thing::ThingErrorNoError);
 }

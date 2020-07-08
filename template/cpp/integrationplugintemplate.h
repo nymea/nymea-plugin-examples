@@ -34,7 +34,7 @@ class IntegrationPluginExample: public IntegrationPlugin
 
 
 public:
-    explicit DevicePluginExample();
+    explicit IntegrationPluginExample();
 
     void init() override;
 
